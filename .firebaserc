@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "alia": "promptly",
+    "default": "promptly"
+  },
+  "targets": {},
+  "etags": {}
+}
