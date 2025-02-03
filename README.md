@@ -35,3 +35,11 @@ Functions
 `npm install`
 
 `firebase emulators:start --only functions`
+
+## Publications
+
+If you use Promptly in academic research, please consider citing the following publications related to it.
+
+Paul Denny, Juho Leinonen, James Prather, Andrew Luxton-Reilly, Thezyrie Amarouche, Brett A. Becker, and Brent N. Reeves. 2023. Promptly: Using Prompt Problems to Teach Learners How to Effectively Utilize AI Code Generators. https://arxiv.org/abs/2307.16364
+
+Paul Denny, Juho Leinonen, James Prather, Andrew Luxton-Reilly, Thezyrie Amarouche, Brett A. Becker, and Brent N. Reeves. 2024. Prompt Problems: A New Programming Exercise for the Generative AI Era. In Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2024). Association for Computing Machinery, New York, NY, USA, 296–302. https://doi.org/10.1145/3626252.3630909
