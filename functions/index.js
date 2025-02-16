@@ -44,8 +44,8 @@ const {
 initializeApp();
 
 const openai = new OpenAI({
-    organization: process.env.chatgpt_organization,
-    apiKey: process.env.chatgpt_apiKey,
+    organization: process.env.CHATGPT_ORGANIZATION,
+    apiKey: process.env.CHATGPT_APIKEY,
 });
 
 const storeSuccess = async (userEmail, prompt, classId, questionId, attemptId, promptLanguage) => {
@@ -158,7 +158,7 @@ const askOpenai = async (prompt, language, testType) => {
 };
 
 const testCode = async (code, language, testCases, stringifiedTestFunction, testType) => {
-    let jobelink = process.env.jobeinabox_link;
+    let jobelink = process.env.JOBEINABOX_LINK;
     /*
         * Example output from jobe
         * {
@@ -917,6 +917,51 @@ exports.userState = functions.https.onRequest(async (req, res) => {
         }
     });
 });
+
+// exports.tryPrompt = functions.runWith({ timeoutSeconds: 300 }).https.onRequest(async (req, res) => {
+//     cors(req, res, async () => {
+//         try {
+//             console.log("Incoming request body:", JSON.stringify(req.body, null, 2)); // Log the request
+//
+//             // Validate Request Format
+//             if (!req.body || !req.body.data) {
+//                 return res.status(400).json({ error: "Invalid request format. Ensure you are sending JSON data in the 'data' field." });
+//             }
+//
+//             // Extract data safely
+//             const { prompt, exercise, user, class: classId, group } = req.body.data || {};
+//
+//             // Log extracted values
+//             console.log("Extracted request data:", { prompt, exercise, user, classId, group });
+//
+//             // Validate Required Fields
+//             if (!prompt || !classId || !exercise || !group) {
+//                 return res.status(400).json({ error: "Missing required parameters." });
+//             }
+//
+//             // Firebase Authentication: Validate User
+//             if (!user) {
+//                 return res.status(401).json({ error: "Unauthorized. No user ID provided." });
+//             }
+//
+//             const auth = admin.auth();
+//             try {
+//                 const userRecord = await auth.getUser(user);
+//                 console.log("User found:", userRecord.email);
+//             } catch (authError) {
+//                 console.error("Auth error:", authError);
+//                 return res.status(401).json({ error: "Invalid user. No matching Firebase user found." });
+//             }
+//
+//             // Respond Successfully
+//             res.status(200).json({ success: "Function executed successfully!" });
+//
+//         } catch (e) {
+//             console.error("Error in tryPrompt:", e);
+//             res.status(500).json({ error: "Internal Server Error" });
+//         }
+//     });
+// });
 
 exports.tryPrompt = functions.runWith({ timeoutSeconds: 300 }).https.onRequest(async (req, res) => {
     cors(req, res, async () => {
