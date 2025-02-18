@@ -11,10 +11,10 @@ Welcome to Promptly. This is my first open source project. Thank you for using P
     Your credentials.json that you will receive after setting up firebase functions needs to be put inside the /functions folder. 
         * Firestore Database
     Stores all the responses and interactions that goes through the backend. 
-    2. CHATGPT API subscription
-    Your api key and organization key needs to go under the /functions/.env
-    3. [Jobe](https://github.com/trampgeek/jobe) or [Jobeinabox](https://github.com/trampgeek/jobeinabox)
-    The link to your jobe or jobe in a box needs to go under the /functions/.env
+   2. Chatgpt API subscription:
+        * Your api key and organization key needs to go under the /functions/.env
+   3. [Jobe](https://github.com/trampgeek/jobe) or [Jobeinabox](https://github.com/trampgeek/jobeinabox):
+        * The link to your jobe or jobe in a box needs to go under the /functions/.env
 
 ## How does functions/index.js work?!?!
 
